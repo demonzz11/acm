@@ -1,0 +1,86 @@
+Title: 消灭比特 - Problem - QOJ.ac
+
+URL Source: https://qoj.ac/problem/14691/statement/zh_cn
+
+Markdown Content:
+给你两个数组 $a$ 和 $b$，它们都由 $n$ 个非负整数组成。你可以对数组 $a$ 执行以下操作任意次（可以为零次）：
+
+*   首先，你选择一个 $0 , 1 , \ldots , n - 1$ 的排列 $p$；
+*   然后，对于每个 $1 \leq i \leq n$，你将 $a_{i}$ 设为 $a_{i} \& p_{i}$。这里 $\&$ 表示按位与（bitwise AND）操作。
+
+你必须确定是否可以将 $a$ 转换为 $b$。
+
+### 输入格式
+
+输入包含多个测试用例。第一行包含一个整数 $t$ ($1 \leq t \leq 10^{4}$)，表示测试用例的数量。对于每个测试用例：
+
+*   第一行包含一个整数 $n$ ($1 \leq n \leq 5 \cdot 10^{4}$)，表示数组 $a$ 和 $b$ 的长度。
+*   第二行包含 $n$ 个整数 $a_{1} , a_{2} , \ldots , a_{n}$ ($0 \leq a_{i} \leq n - 1$)，表示数组 $a$ 的元素。
+*   第三行包含 $n$ 个整数 $b_{1} , b_{2} , \ldots , b_{n}$ ($0 \leq b_{i} \leq n - 1$)，表示数组 $b$ 的元素。
+
+保证所有测试用例中 $n$ 的总和不超过 $5 \cdot 10^{4}$。
+
+### 输出格式
+
+对于每个测试用例，如果可以将 $a$ 转换为 $b$，则单行输出 "Yes"。否则，输出 "No"。
+
+你可以以任何大小写形式输出答案。例如，字符串 "yEs"、"yes"、"Yes" 和 "YES" 都会被识别为肯定的回答。
+
+### 样例
+
+#### 输入样例 1
+
+4
+3
+0 1 2
+2 1 0
+5
+1 0 1 3 4
+0 0 1 1 4
+8
+1 2 3 4 5 6 7 7
+1 2 3 4 5 6 7 7
+8
+7 7 7 7 7 7 7 7
+1 2 3 4 5 6 7 7
+#### 输出样例 1
+
+No
+Yes
+Yes
+No
+### 说明
+
+在第一个测试用例中，我们需要至少使用一次操作来将 $a$ 转换为 $b$。请注意，由于 $a_{1} = 0$，所以 $a_{1} \& p_{1}$ 总是 $0$。然而 $b_{1} > 0$，因此无论在操作过程中如何选择排列，都无法使 $a_{1} = b_{1}$。
+
+在第二个测试用例中，你可以选择 $p = \left[\right. 2 , 0 , 3 , 1 , 4 \left]\right.$。在此操作之后，$a$ 被转换为 $b$。
+
+在第三个测试用例中，$a = b$，因此我们不需要任何操作。
+
+##### About Discussions
+
+**The discussion section is only for posting:** General Discussions (problem-solving strategies, alternative approaches), and Off-topic conversations.
+
+**This is NOT for reporting issues!** If you want to report bugs or errors, please use the **Issues** section below.
+
+##### Open Discussions 0
+
+No discussions in this category.
+
+##### About Issues
+
+If you find any issues with the problem (statement, scoring, time/memory limits, test cases, etc.), you may submit an issue here. A problem moderator will review your issue.
+
+**Guidelines:**
+
+1.   This is not a place to publish discussions, editorials, or requests to debug your code. Issues are only visible to you and problem moderators.
+2.   Do not submit duplicated issues.
+3.   Issues must be filed in English or Chinese only.
+
+##### Active Issues 0
+
+No issues in this category.
+
+##### Closed/Resolved Issues 0
+
+No issues in this category.
