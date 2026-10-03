@@ -1,0 +1,31 @@
+Original file SHA-256: unchanged
+A-M compiled with C++17 -O2 -Wall -Wextra
+Fixed-output official samples passed
+A: 56 interactive cases, max 17 queries (0.45s)
+B: 506 routes versus state-space BFS (0.86s)
+C: 5584 constructions, max 33 operations (0.43s)
+D: 60 direct ternary-state enumerations (1.59s)
+E: 100 instances versus pairwise Hamming distances (0.59s)
+F: 20000 exact segment-intersection queries, including zero and 1e9 coordinates (0.12s)
+G: 180 instances versus all set partitions (0.05s)
+H: 294 multisets versus complete minimax (0.01s)
+I: 120 instances versus all retained-index subsets (0.11s)
+J: 130 DAGs plus official cycles and duplicate-edge cycle (0.76s)
+K: 25000 operations versus plain arrays, including negative adds and uint64 wrap (0.65s)
+L: 888 permutations versus explicit sets of obtainable permutations (5.23s)
+M: 519 strings versus binary-tree DP, including NTT-sized products (3.76s)
+stress D: 0.225s
+stress E: 0.099s
+stress E: 0.194s
+stress C: 0.025s
+stress C random: replayed 39 operations
+stress C: 0.017s
+stress C near_alternating: replayed 35 operations
+stress C: 0.023s
+stress C reversed: replayed 57 operations
+stress I: 0.152s
+stress J: 0.041s
+stress L: 0.331s
+stress M: 0.277s
+stress K: 0.349s
+stress K: 1.748s

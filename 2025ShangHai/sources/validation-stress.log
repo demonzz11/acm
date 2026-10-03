@@ -1,0 +1,26 @@
+Original file SHA-256: unchanged
+A-M compiled with C++17 -O2 -Wall -Wextra
+Fixed-output official samples passed
+F: 20000 exact segment-intersection queries, including zero and 1e9 coordinates (0.11s)
+G: 180 instances versus all set partitions (0.04s)
+H: 94 multisets versus complete minimax (0.01s)
+J: 130 DAGs plus official cycles and duplicate-edge cycle (0.77s)
+stress D: 0.239s
+stress E: 0.117s
+stress E: 0.201s
+stress C: 0.043s
+stress C random: replayed 37 operations
+stress C: 0.017s
+stress C near_alternating: replayed 35 operations
+stress C: 0.022s
+stress C reversed: replayed 57 operations
+stress I: 0.184s
+stress J: 0.054s
+stress J: 0.070s
+stress G: 0.037s
+stress H: 0.033s
+stress F: 0.546s
+stress L: 0.332s
+stress M: 0.294s
+stress K: 0.373s
+stress K: 1.781s

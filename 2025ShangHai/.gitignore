@@ -1,0 +1,3 @@
+# Preserve the original executables locally; publish source and documentation.
+original/*.exe
+__pycache__/

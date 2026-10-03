@@ -1,0 +1,788 @@
+--- PAGE 1 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai
+January 10-11, 2026
+This problem set should contain 13 problems on 21 numbered pages.
+Based on
+International Collegiate Programming Contest (ICPC)
+1
+
+--- PAGE 2 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Problem A. Menji, we miss you!
+Time limit: 1 second
+Memory limit: 1024 megabytes
+This is an interactive problem.
+Menji is lost and everyone misses him. It’s your job to find him!
+There is abinary tree T, consisting ofn vertices, and each edge of treeT is of length1. Menji is hiding
+at vertex X. You know the structure of the tree. However, you don’t knowX.
+To find X, you can send signals. You can select a vertexu and select a signal strengthk, then send a
+signal of strengthk from vertex u. If the distance betweenu and X is no more thank, Menji will receive
+the signal and send a signal back, and you will receive the signal. Otherwise, you won’t receive anything.
+Sending signals is slow, and you are in a hurry, so please determine the position of Menji in no more than
+40 signals., so please determine the position of Menji in no more than40 signals.
+Interaction Protocol
+The input contains multiple testcases. The first line of the input contains an integerT (1≤ T≤ 100),
+the number of testcases.
+For each testcase, the first line contains an integern (2≤ n≤ 3× 104), the number of vertices in the tree.
+The second line containsn− 1 integers f a2, f a3,··· , f an (1≤ f ai < i ), where f ai is the parent ofi on
+the tree. The tree is rooted at vertex1.
+It is guaranteed that the tree is a binary tree, that is, there doesn’t exist1 < i < j < k ≤ n,
+such that f ai = f aj = f ak.
+To send a signal, print a single line in the following format:
+• ? u k: Indicate that you create a signal at vertex u with strength k. You need to ensure
+1 ≤ u ≤ n, 0 ≤ k ≤ n. Then you have to read an integer o (o ∈ {0, 1}). If you received the
+signal, or equivalently,dis(u, X)≤ k, then o = 1, otherwise o = 0.
+To report the answer, print a single line in the following format:
+• ! u: Indicate that you have foundX = u. You need to move on to the next testcase after printing
+this, or terminate if there’s no more.
+For each testcase, you can send at most40 signals. Reporting the answer does not count as sending a
+signal.
+If you send more than 40 signals, or the signal you sent is malformed, or the answer you reported is
+incorrect, then the interaction will end and you will receiveWrong answer verdict.
+Note that the interactor isadaptive, meaning that the answer may change depending on your queries as
+long as it remains consistent with the constraints and the answers to the previous queries.
+It’s guaranteed that the sum ofn over all testcases does not exceed3× 104.
+After printing each line do not forget to output the end of line and flush the output. You may use
+fflush(stdout) or cout.flush() to flush the stream for C++, useSystem.out.flush() for Java and
+stdout.flush() for Python.
+Page 2 of 21
+
+--- PAGE 3 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Example
+standard input standard output
+2
+7
+1 1 2 2 3 3
+1
+0
+0
+7
+1 1 2 2 3 3
+0
+1
+? 2 1
+? 3 2
+? 4 0
+! 5
+? 2 1
+? 3 0
+! 3
+Page 3 of 21
+
+--- PAGE 4 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Problem B. Hamu
+Time limit: 1 second
+Memory limit: 1024 megabytes
+Dingdong plans to travel to the country of Hamu.
+The country of Hamu consists of n cities and m bidirectional roads. Before this trip, Dingdong has
+already visited cityi exactly ai times. During this trip, Dingdong plans to enter Hamu at citys. On each
+subsequent day, Dingdong will travel along a certain road to a city and visit that city once. At the end of
+the final day’s visit, Dingdong should be at citys and leave Hamu from citys. Note that on the day
+of entering the country of Hamu, Dingdong does not visit citys.
+Dingdong hopes that after this trip, combined with his previous visits, every city in Hamu will have been
+visited by him an even number of times. Dingdong has limited time and can visit at most5n cities during
+this trip. Please help him construct a valid trip plan, or tell him if it is impossible.
+Input
+The input contains multiple testcases. The first line of the input contains an integerT (1≤ T≤ 2× 105),
+the number of testcases.
+Foreachtestcase,thefirstlinecontainsthreeintegers n, m, s (1≤ n≤ 2×105, 0≤ m≤ 2×105, 1≤ s≤ n),
+where n is the number of cities,m is the number of roads,s is the index of the starting city.
+The next line containsn integers a1, a2,··· , an (0≤ ai≤ 109), the number of times Dingdong has visited
+for each city.
+The nextmlines each contain two integersui, vi (1≤ ui, vi≤ n), indicating an undirected road connecting
+city ui and city vi. There can be multiple edges and self loops.In other words, it’snot guaranteed
+that ui̸= vi, and it’snot guaranteed that (ui, vi)̸= (uj, vj) for i̸= j.
+It’s guaranteed that the sum ofn and the sum ofm over all testcases does not exceed2× 105, respectively.
+Output
+For each testcase, if there’s no valid trip plan, printNo in a single line.
+Otherwise, printYesin a single line first, then print an integerk (0≤ k≤ 5n)in the next line, representing
+the total number of visits during this trip. In the following line, print the indexes of the cities visited in
+order.
+Page 4 of 21
+
+--- PAGE 5 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Example
+standard input standard output
+5
+4 4 1
+1 1 1 1
+1 2
+2 3
+3 4
+4 1
+5 7 1
+9 4 3 11 7
+1 2
+2 5
+2 4
+3 4
+2 3
+1 3
+4 5
+2 2 2
+114 514
+1 2
+1 2
+5 0 1
+114 514 19 19 810
+2 1 1
+3 5
+1 2
+Yes
+4
+2 3 4 1
+Yes
+6
+2 4 5 2 3 1
+Yes
+0
+No
+Yes
+2
+2 1
+Note
+For the first testcase, after visiting along the route1→ 2→ 3→ 4→ 1, cities 1, 2, 3, 4 have been visited
+2, 2, 2, 2 times respectively, meeting the requirement.
+Page 5 of 21
+
+--- PAGE 6 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Problem C. Singularity
+Time limit: 1 second
+Memory limit: 1024 megabytes
+In the year of 2077, problemsetting becomes simple. Robots will generate a problem by setting some
+random operations and then solve it. A problemsetter only has to check whether the problem is correct
+or not.
+Here is a problem from 2077:
+Given a permutation p1, p2,··· pn, it is guaranteed thatn is even. You wish to sort the permutation,
+using only one type of operation:
+• FakeSort(l,r): You have to guarantee thatr− l + 1 is even. Let k = r− l + 1, then the largest
+k/2 elements and the smallest k/2 elements in the continuous subsequencepl, pl+1,··· pr will be
+sorted independently. That is, letL1, L2,··· Lk/2 be the indices of the largestk/2 numbers, and
+S1, S2··· Sk/2 be the indices of the smallestk/2 numbers. We first sort the numbers on the indices
+L1∼ Lk/2, then sort the numbers on the indicesS1∼ Sk/2.
+Here is a concrete example; suppose the permutation isp ={2, 5, 7, 1, 8, 6, 4, 3}. If we callFakeSort(2,7):
+• k = r− l + 1 = 6 . The continuous subsequencepl, pl+1,··· , pr is{5, 7, 1, 8, 6, 4}; we will sort the
+largest 3 numbers and smallest3 numbers of this sequence independently.
+• p = {2, 5,7, 1,8,6, 4, 3}; the largest 3 numbers are bold. After sorting, they become
+p ={2, 5,6, 1,7,8, 4, 3}.
+• p = {2,5, 6,1, 7, 8,4, 3}; the smallest 3 numbers are bold. After sorting, they become
+p ={2,1, 6,4, 7, 8,5, 3}.
+So p ={2, 5, 7, 1, 8, 6, 4, 3} after FakeSort(2,7) becomes{2, 1, 6, 4, 7, 8, 5, 3}.
+Please use no more than114 operations to sort the permutation or determine it is impossible. It can be
+proved that if a permutation can be sorted with this operation, there is a way to use no more than114
+operations.
+Input
+The input contains multiple testcases. The first line of the input contains an integerT (1≤ T ≤ 103),
+the number of testcases.
+For each testcase, the first line contains aneven integer n (4≤ n≤ 105), the length of the permutation.
+The second line containsn integers p1, p2,··· , pn (1≤ pi≤ n), the permutation you need to sort. It is
+guaranteed that p is a permutation.
+It’s guaranteed that the sum ofn over all testcases does not exceed2× 105.
+Output
+For each testcase, if it is impossible to sort the permutation, print−1.
+Otherwise, print an integerk (0≤ k≤ 114), denoting the number of operations used.
+In the following k lines, print l, r (1≤ l≤ r≤ n, r− l + 1 is even) in each line, denoting performing
+Fakesort(l,r).
+Page 6 of 21
+
+--- PAGE 7 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Example
+standard input standard output
+3
+4
+2 1 4 3
+6
+3 6 5 1 2 4
+8
+3 2 1 7 5 4 6 8
+1
+1 4
+-1
+2
+4 7
+1 6
+Page 7 of 21
+
+--- PAGE 8 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Problem D. Not a subset sum
+Time limit: 1 second
+Memory limit: 1024 megabytes
+We are given an arraya0, a1, ..., a2n−1 of length 2n. For a stringq of length n over the alphabet0,1,?
+(1-indexed), define the "generalized subset sum"S(q) as the sum ofaj over all indicesj that satisfy:
+• For each1≤ k≤ n, if qk = 0 then the k-th bit ofj is 0.
+• For each1≤ k≤ n, if qk = 1 then the k-th bit ofj is 1.
+• If qk =? there is no restriction on thek-th bit ofj.
+For example, when n = 3 and s = 0?1, the generalized subset sum isS(q) = a4 + a6 (binary 100 and
+110). Note that the first bit is the lowest bit.
+Your task is to compute the generalized subset sum for each string of lengthn over the alphabet0,1,?.
+Because the total output can be large, you only need to output thebitwise XORof all these sums.
+Input
+The first line of the input contains an integern (1≤ n≤ 16).
+The second line of the input contains2n integers a0, a1,··· , a2n−1 (0≤ ai≤ 9), contents in arraya.
+Output
+Print an integer denoting the bitwise-XOR of all generalized subset sums.
+Examples
+standard input standard output
+1
+3 5
+14
+2
+2 6 8 8
+0
+Note
+The following are query stringsq and their corresponding generalized subset sumsS(q) in sample 2:
+q = 00, S(q) = a0 = 2
+q = 10, S(q) = a1 = 6
+q = ?0, S(q) = a0 + a1 = 2 + 6 = 8
+q = 01, S(q) = a2 = 8
+q = 11, S(q) = a3 = 8
+q = ?1, S(q) = a2 + a3 = 16
+q = 0?, S(q) = a0 + a2 = 10
+q = 1?, S(q) = a1 + a3 = 14
+q = ??, S(q) = a0 + a1 + a2 + a3 = 24
+Now it is easy to verify that the output is0.
+Page 8 of 21
+
+--- PAGE 9 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Problem E. Flower’s land 3
+Time limit: 1 second
+Memory limit: 1024 megabytes
+There is a binary strings1 of length m stored on disk #1.
+Then, there aren− 1 operations. In thei-th operation, a disk1≤ pi+1≤ i is chosen, and the stringspi+1
+on that disk is copied to diski + 1, producing si+1. However, during the copying process, up tok bits
+may be flipped (i.e., errors occur in at mostk positions).
+You are given all the finaln binary strings s1, s2, . . . , sn, each of lengthm. Your task is to determine how
+many possible sequencesp2, p3, . . . , pn could result in this final configuration.
+Since the answer can be large, you only need to find the answer modulo998244353.
+Input
+The first line of the input contains three integersn, m, k (2≤ n≤ 5000, 4≤ m≤ 15000, 1≤ k≤ 3),
+described in the statement. It is guaranteed thatm is a multiple of4.
+Each of the nextn lines contains a hexadecimal strings′
+i of length m/4. Each character ofs′
+i is one of
+0–9 or A–F, whereA = 10, B = 11, . . ., F = 15.
+Each bit in the hexadecimal representation s′
+i corresponds to four consecutive bits in the binary
+string si. Specifically, for each bit s′
+i,j, it can be proved that there exists a unique tuple (a, b, c, d)
+satisfying s′
+i,j = 8 a + 4 b + 2 c + d and a, b, c, d ∈ {0, 1}. Bits in the binary string si satisfy
+(si,4j, si,4j+1, si,4j+2, si,4j+3) = ( a, b, c, d).
+Output
+Print an integer — the number of valid sequences(p2, p3, . . . , pn) modulo 998244353.
+Example
+standard input standard output
+5 8 2
+95
+05
+BD
+9C
+BD
+6
+Page 9 of 21
+
+--- PAGE 10 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Problem F. Flower’s land 4
+Time limit: 1.5 seconds
+Memory limit: 2048 megabytes
+There are n segments on a 2D plane. Each segment starts on thenon-negative part of thex-axis and
+ends on thenon-negative part of they-axis. In other words, its starting point has coordinates(xi, 0)
+with xi≥ 0, and its ending point has coordinates(0, yi) with yi≥ 0.
+You are givenq queries. In each query, a segment is specified whose starting point lies on thex-axis, and
+whose ending point can beanywhere in the first quadrant or the non-negative parts of the axes
+of the plane. For each query segment, determine whether it intersects with any of the existing segments.
+Intersections at endpoints are counted.
+Queries are independent of each other; that is, the segment given in each query will not be kept in the
+remaining queries.
+Input
+The input contains multiple testcases. The first line of the input contains an integerT (1≤ T ≤ 106),
+the number of testcases.
+For each test case, the first line contains two integersn, q (1≤ n, q≤ 106), the number of existing segments
+and the number of queries.
+Each of the nextn lines contains two integersxi, yi (0≤ xi, yi≤ 109), describing a segment that starts
+at (xi, 0) and ends at(0, yi).
+Then, each of the followingq lines contains three integers aj, bj, cj (0≤ aj, bj, cj ≤ 109), describing a
+query segment that starts at(aj, 0) and ends at(bj, cj).
+It’s guaranteed that the sum ofn and the sum ofq over all testcases does not exceed106, respectively.
+Output
+For each query, printYES if the query segment intersects (including at endpoints) with at least one of the
+existing segments, andNO otherwise.
+Example
+standard input standard output
+1
+3 5
+6 6
+2 6
+6 2
+10 4 4
+10 3 3
+0 1 1
+0 2 2
+5 2 1
+NO
+YES
+NO
+YES
+NO
+Page 10 of 21
+
+--- PAGE 11 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Problem G. Gemcrate
+Time limit: 1 second
+Memory limit: 512 megabytes
+Noir has n gems. The i-th gem has a positive integerai written on it. Noir wants to divide these gems
+into several non-empty groups. Each gem belongs to exactly one group.
+Suppose the i-th group contains gems with labelki,1, ki,2, . . . , ki,p, then Noir treats thebrightness of the
+i-th group as aki,1⊕ aki,2⊕···⊕ aki,p, where⊕ is the bitwise-XOR operation. Denote thebrightness of
+the i-th group asBi.
+For a grouping method ofm groups, Noir treats thevalue of this method asB1&B2& . . . &Bm, where &
+is the bitwise-AND operation.
+Noir wants to find the maximum possiblevalue over all grouping methods.
+Input
+The input contains multiple testcases. The first line of the input contains an integerT (1≤ T ≤ 104),
+the number of testcases.
+For each testcase, the first line contains an integern (1≤ n≤ 5× 105), the number of gems.
+The second line containsn integers a1, a2,··· , an (1≤ ai < 260), the integers written on gems.
+It’s guaranteed that the sum ofn over all testcases does not exceed5× 105.
+Output
+For each testcase, print an integer representing the maximum possiblevalue over all grouping methods.
+Example
+standard input standard output
+4
+4
+1 2 3 1
+6
+4 7 5 2 6 3
+4
+14 15 9 18
+2
+251508091405 13011908091815
+2
+6
+26
+13121614001578
+Note
+For the first testcase, a possible grouping method is [1, 2, 3, 1] = [1 , 3], [2, 1] with a value of
+B1&B2 = (1 ⊕ 3)&(2⊕ 1) = 2&3 = 2 . Another possible grouping method is [1, 2, 3, 1] = [1 , 2, 3, 1],
+with a lower valueB1 = 1⊕ 2⊕ 3⊕ 1 = 1. It can be proved that it’s not possible to achieve a value greater
+than 2.
+For the second testcase, the best grouping method is[4, 7, 5, 2, 6, 3] = [7] , [5, 3], [6], [4, 2] with a value of
+7&(5⊕ 3)&6&(4⊕ 2) = 6.
+Page 11 of 21
+
+--- PAGE 12 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Problem H. AGI
+Time limit: 1 second
+Memory limit: 1024 megabytes
+Dr. Menji is an expert in AI. Now, he is training Bot, an AGI(Artificial Game Intelligence).
+To teach Bot how to play games, he plays with Bot every day. Today they are playing the following game:
+The game starts with a sequence of2n non-negative integers, a1, a2,··· a2n, and a numberS. Initially,
+S = 0.
+Menji and Bot take turns; Menji goes first:
+• In Menji’s turn, he chooses a numberx from the sequence, setsS← S⊕ x, and deletesx from the
+sequence. Note that⊕ is the bitwise XOR(exclusive or) function.
+• In Bot’s turn, he chooses a numberx from the sequence and deletesx from the sequence.
+The game ends when no numbers remain in the sequence. Menji wins if and only ifS = 0 in the end;
+otherwise, Bot wins.
+Menji wonders if both players play optimally, who is the winner of the game.
+Input
+The input contains multiple testcases. The first line contains an integerT (1≤ T≤ 105), the number of
+testcases.
+For each testcase, the first line contains an integern (1≤ n≤ 105), described in the statement.
+The second line contains2n integers a1, a2,··· , a2n (0≤ ai < 230), representing integers in the game.
+It’s guaranteed that the sum ofn over all testcases does not exceed2× 105.
+Output
+For each testcase, if Menji can win the game, printMenji in one line; otherwise, printBot in one line.
+Example
+standard input standard output
+5
+2
+1 1 3 3
+2
+1 1 1 3
+3
+1 1 4 5 1 4
+3
+1 9 1 9 8 10
+6
+1 1 4 5 1 4 1 9 1 9 8 10
+Bot
+Menji
+Menji
+Menji
+Bot
+Note
+For the first testcase, no matter what number Menji chooses, Bot can always choose a same number, so
+Menji always chooses an1 and a 3, S = 1⊕ 3 = 2̸= 0, so Bot can always win.
+For the second testcase, Menji can choose an1 in the first turn; no matter what Bot chooses, Menji can
+choose another 1, so Menji always receives two1s, S = 1⊕ 1 = 0, so Menji can always win.
+Page 12 of 21
+
+--- PAGE 13 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Problem I. Round screws
+Time limit: 1 second
+Memory limit: 1024 megabytes
+The NIT likes round screws. He also likes the⊕ operator because it reminds him of round screws, where
+⊕ represents Bitwise-XOR operation.
+Define the valueVa of a sequencea1, a2,··· , an as Va = a1 + an +
+n−1P
+i=1
+(ai⊕ ai+1).
+Given a sequencea1, a2,··· , an, you can perform the following operation for arbitrary times:
+• Select an indexi (1≤ i≤ n), change ai to any non-negative integer; this operation has a costC.
+Minimize the sum of the value of the sequence and the cost incurred by operations. In other words, letp
+be the number of operations you performed, andVa′ be the value of thea after the operations, then you
+need to minimizepC + Va′.
+Input
+The input contains multiple testcases. The first line of the input contains an integerT (1≤ T≤ 100),
+the number of testcases.
+For each testcase, the first line contains two integersn, C (2≤ n≤ 105, 0≤ C < 219), the length of the
+sequence and the cost of performing an operation.
+Thesecondlinecontains nintegers a1, a2,··· , an (0≤ ai < 218),representingtheelementsinthesequence.
+It’s guaranteed that the sum ofn over all testcases does not exceed2× 105.
+Output
+For each testcase, print an integer in one line, the minimum possible value ofpC + Va′.
+Example
+standard input standard output
+3
+4 4
+1 4 5 6
+8 6
+6 6 6 1 1 6 6 6
+6 7
+1 7 2 6 3 5
+14
+24
+29
+Note
+For the first testcase, one way to achieve minimum is to change the sequence to 1, 1, 1, 0; the bold
+numbers are the changed. The final sequence value is2, and 3 operations are done; the total value+ cost
+is 2 + 3× 4 = 14.
+For the second testcase, one way to achieve minimum is to change the sequence to6, 6, 6, 6, 6, 6, 6, 6; the
+final value is12 + 2× 6 = 24.
+Page 13 of 21
+
+--- PAGE 14 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Problem J. Y et another mailbox problem
+Time limit: 1.5 seconds
+Memory limit: 512 megabytes
+Yana, Mino, White, and Huzz are best friends.
+One day, the coach asked White, Mino, and Huzz to prepare a mock contest. Huzz designed a beautifully
+search problem whose complexity is exponential with respect tok. He carefully checked the entire problem
+statement, except for one detail: he accidentally wrotek≤ 5× 105 instead of k≤ 10. Later, this problem
+appeared in a mock contest. The furious contestant, Yana, came to Huzz, asking how the problem was
+supposed to be solved. But he seemed to have forgotten something, and the problem statement he provided
+looked slightly different —
+You are given adirected graph with n vertices and m edges, where each edgee is assigned an integer
+weight w(e) between 1 and 8.
+A path is a sequence of edges(e1, e2, . . . , eℓ) such that the endpoint ofei is the startpoint ofei+1 for all
+1≤ i < ℓ. The length of the path isℓ, the number of edges it contains. Note that a path may contain the
+same edgemultiple times.
+The weight sequence of the path is the sequence of edge weights [w(e1), w(e2), . . . , w(eℓ)]. Paths are
+compared bylexicographical orderof their weight sequences.
+Two paths are considered distinct as long as they use different edges, even if they share the same vertex
+sequence and weight sequence. For example, if both paths(e1, e2) and (e3, e4) have weight sequence[1,2],
+and both traverse vertices1→ 2→ 3, they are still distinct as long ase1̸= e3 or e2̸= e4.
+White wants to find the lexicographically smallestk paths. Since the total output may be too large, you
+only need to output the length of each path.
+Input
+Thefirstlineoftheinputcontainsthreeintegers n, m, k (2≤ n≤ 5×105, 1≤ m≤ 5×105, 1≤ k≤ 5×105),
+representing the number of vertices, the number of edges, and the required number of paths.
+Each of the nextm lines contains three integersx, y, z (1≤ x, y≤ n, 1≤ z≤ 8, x̸= y), representing a
+directed edge e = (x, y) with weight w(e) = z. The given edge set may containmultiple edges.
+Output
+Print k lines. The i-th line should contain a single integer, the length of the path whose weight is thei-th
+smallest in lexicographical order. If there are fewer thani paths, output−1 instead.
+Page 14 of 21
+
+--- PAGE 15 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Examples
+standard input standard output
+5 5 8
+2 1 1
+3 1 2
+4 1 1
+1 5 2
+5 2 1
+1
+1
+1
+2
+3
+4
+5
+6
+3 4 10
+1 2 1
+1 2 1
+2 3 2
+2 3 3
+1
+1
+2
+2
+2
+2
+1
+1
+-1
+-1
+6 5 15
+1 2 3
+2 3 5
+3 4 2
+3 5 1
+5 6 4
+1
+2
+1
+1
+2
+3
+4
+3
+1
+1
+2
+3
+2
+-1
+-1
+Note
+For simplicity, letej denote the j-th input edge.
+For the first testcase, the lexicographically smallest8 paths are:
+• Path (e1), weight sequence[1].
+• Path (e3), weight sequence[1].
+• Path (e5), weight sequence[1].
+• Path (e5, e1), weight sequence[1,1].
+• Path (e5, e1, e4), weight sequence[1,1,2].
+• Path (e5, e1, e4, e5), weight sequence[1,1,2,1].
+• Path (e5, e1, e4, e5, e1), weight sequence[1,1,2,1,1].
+Page 15 of 21
+
+--- PAGE 16 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+• Path (e5, e1, e4, e5, e1, e4), weight sequence[1,1,2,1,1,2].
+Page 16 of 21
+
+--- PAGE 17 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Problem K. No more regrets
+Time limit: 4 seconds
+Memory limit: 1024 megabytes
+After the provincial team selection, White fell into a long period of disappointment. She could not find
+any hope in her results. Even so, White continued her final training before the NOI. Besides her regular
+training, she also began to explore topics she had never had the chance to learn during her OI days —
+hoping that, before saying goodbye, there would be no more regrets.
+Shaking off her wandering thoughts, White suddenly focused on a problem in front of her, a plain and
+boring data structure problem —
+White has a sequence ofn integers a1, a2, . . . , an. She will performq operations on this sequence. Each
+operation is one of the following three types:
+• 1 l r v — Add v to each element in the interval[l, r].
+• 2 l r v — Assign each element in the interval[l, r] to v.
+• 3 l r — Query the valuePr
+i=l(mini
+j=l aj)× (maxi
+j=l aj) modulo 264.
+Your task is to simulate all operations and output the results of all queries.
+Input
+The first line of the input contains two integersn, q (1≤ n, q≤ 2× 105), representing the number of
+elements and the number of operations.
+The second line containsn integers a1, a2,··· , an (0≤ ai≤ 109), representing the initial elements.
+Each of the nextq lines describes an operation, in one of the three formats:
+• 1 l r v (1≤ l≤ r≤ n,−109≤ v≤ 109), representing the Add operation.
+• 2 l r v (1≤ l≤ r≤ n, 1≤ v≤ 109), representing the Assign operation.
+• 3 l r (1≤ l≤ r≤ n), representing the Query operation.
+It’s guaranteed that0≤ ai≤ 109 for each 1≤ i≤ n during the whole process.
+Output
+For each Query operation, print an integer in a single line—the result of the query modulo264.
+Page 17 of 21
+
+--- PAGE 18 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Examples
+standard input standard output
+5 8
+2 3 5 4 1
+3 1 5
+3 2 4
+2 4 5 2
+3 1 5
+3 2 4
+1 1 2 5
+3 1 5
+3 2 4
+35
+39
+40
+34
+177
+120
+10 20
+1 2 3 4 5 6 7 8 9 10
+1 1 10 1
+3 1 5
+3 2 9
+3 8 10
+1 2 5 10
+3 1 5
+3 2 9
+3 8 10
+1 5 9 -5
+3 1 5
+3 2 9
+3 8 10
+1 2 5 -10
+3 1 5
+3 2 9
+3 8 10
+1 5 9 5
+3 1 5
+3 2 9
+3 8 10
+40
+156
+270
+120
+1202
+270
+118
+831
+80
+33
+61
+80
+40
+156
+270
+Note
+In the first testcase:
+The original sequence is2 3 5 4 1. After the third operation, it becomes2 3 2 2 1, and after the sixth
+operation, it becomes7 8 7 7 6.
+For the first query, the answer isP5
+i=1(mini
+j=1 aj)× (maxi
+j=1 aj) = 2× 2 + 2× 3 + 2× 5 + 2× 5 + 1× 5 = 35.
+For the second query, the answer isP4
+i=2(mini
+j=2 aj)× (maxi
+j=2 aj) = 3× 3 + 3× 5 + 3× 5 = 39.
+Page 18 of 21
+
+--- PAGE 19 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Problem L. Y et another permutation problem
+Time limit: 1.5 seconds
+Memory limit: 1024 megabytes
+Yana, Mino, White, and Huzz are best friends.
+Having finally finished the coach’s demanding tasks, Huzz had earned a rest. He found it on one lazy
+afternoon, where the world seemed to slow to a crawl, wrapped in the warm, golden haze of impending
+dusk. A gentle breeze did little more than stir the dust motes dancing in the sunbeams slanting through
+the leaves of a great oak tree.
+In that sleepy, comfortable void, Huzz found a permutation in his soft shark toy. He decided to share it
+with his friends for fun.
+Mino loves splitting. He can split this permutation into several contiguous segments.
+Yana loves swapping. He can choose one contiguous segment and swap its maximum and minimum
+elements.
+Specifically, they can perform the following two types of operationsany number of times, in any
+order:
+• split: Choose one contiguous segment whose length is greater than1. Then choose a position inside
+it and split it into two adjacent contiguous segments. For example,(ai, . . . , aj) can be split into
+(ai, . . . , ak) and (ak+1, . . . , aj), where i≤ k < j.
+• swap: Choose one contiguous segment and swap its maximum and minimum elements.
+After performing any number of operations, they stop performing, and all resulting segments are merged
+in their original order to form a new permutation.
+White loves counting. She wonders — how many distinct permutations can they obtain?
+As the result can be very large, you only need to find the answer modulo998 244 353 .
+Input
+The first line the input contains an integern (1≤ n≤ 500), the length of the permutation.
+The second line containsn integers a1, a2,··· , an (1≤ ai≤ n), representing the permutation itself. It’s
+guaranteed that{an} is a permutation.
+Output
+Print an integer, the number of distinct permutations they can obtain modulo998 244 353 .
+Examples
+standard input standard output
+4
+1 4 2 3
+10
+7
+5 1 4 2 6 3 7
+340
+Note
+In the first sample, the following are all possible permutations they can obtain:
+(1234), (1243), (1423), (1432), (4123), (4132), (4213), (4231), (4312), (4321)
+Page 19 of 21
+
+--- PAGE 20 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Problem M. Y et another 01 problem
+Time limit: 5 seconds
+Memory limit: 1024 megabytes
+Yana, Mino, White, and Huzz are best friends.
+Mino has been feeling confused lately. Obsessed with his past failures in OI, he has been struggling to plan
+his future while managing his busy school schedule. His three friends suggested he evaluate the importance
+of his tasks and prioritize them.
+Assume there are n different tasks numbered from1 to n. Each time, Huzz selects two adjacent tasks,
+White compares them, and Yana merges them into a single task. Mino is surprised to find that this
+process accidentally forms a segment tree, which does not necessarily split in the middle. More precisely,
+it forms a tree with2n− 1 nodes, where every subtree corresponds to a contiguous segment. Note that
+all n tasks are leaves, while the othern− 1 nodes each have two children. These nodes, which result from
+comparisons, define the values of the edges to their children:0 for the smaller one and1 for the larger
+one.
+Mino is very fond of calculations. He defines the weight of each task as the XOR sum of the edges along
+the path from the task to the root. He wonders: if the weights are given, how many ways are there to
+construct such trees and compare the children?
+Once again, Mino is not skilled in OI, which is why he has turned to you for help. To simplify the problem,
+you only need to find the answer modulo998, 244, 353.
+Input
+The first line of the input contains a positive integern (1≤ n≤ 250000), the number of tasks.
+The second line contains a binary stringS of length n, where Si represents the Bitwise-XOR of all values
+on the edges from taski to the root.
+Output
+Print an integer, the answer modulo998, 244, 353.
+Example
+standard input standard output
+4
+0101
+6
+Note
+There are 6 ways to construct the tree and compare the children:
+Page 20 of 21
+
+--- PAGE 21 ---
+The 4th Universal Cup
+Stage 12: Grand Prix of Shanghai, November 29, 2025
+Page 21 of 21
