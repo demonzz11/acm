@@ -64,7 +64,7 @@ python verify.py --stress
 
 原来的 `G.cpp`、`H.cpp`、`G.debug.exe`、`H.debug.exe` 已按原字节移动到 [original/](original/)，SHA-256 摘要保存在 [original/SHA256.json](original/SHA256.json)。题解中的重写代码放在 `std/`，便于逐行对照。`original/*.exe` 被本目录 `.gitignore` 忽略，仍保留在本地；上传 GitHub 时默认只发布源码和文档。
 
-本文使用标准 Markdown、相对链接和 GitHub 数学公式语法。行内公式使用 `$` 加反引号包裹的形式，独立公式使用 `$$`。题面权威版本见官方 PDF；中文摘要不替代完整输入输出协议。
+本文使用标准 Markdown、相对链接和 GitHub 数学公式语法。行内公式采用 ``$`a_i`$`` 的形式，独立公式使用语言标记为 `math` 的围栏代码块。这样可保留 LaTeX 的反斜杠、矩阵换行和花括号，避免公式先被 Markdown 转义或把独立的 `=` 行识别成标题。按位与统一写成 $`\land`$，含义在 G 题中说明。题面权威版本见官方 PDF；中文摘要不替代完整输入输出协议。
 
 ## 来源
 
