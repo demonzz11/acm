@@ -1,0 +1,16 @@
+{
+  "id": 105588,
+  "name": "The 2024 ICPC Asia Kunming Regional Contest (The 3rd Universal Cup. Stage 20: Kunming)",
+  "type": "ICPC",
+  "phase": "FINISHED",
+  "frozen": false,
+  "durationSeconds": 18000,
+  "startTimeSeconds": 1733016600,
+  "relativeTimeSeconds": 58250426,
+  "preparedBy": "OMG_link",
+  "difficulty": 4,
+  "kind": "Official ICPC Contest",
+  "country": "China",
+  "city": "Kunming",
+  "season": "2024-2025"
+}

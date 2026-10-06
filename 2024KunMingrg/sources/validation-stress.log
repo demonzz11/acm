@@ -1,0 +1,20 @@
+A-M: C++17 builds passed
+C/G/J: official samples passed
+C: 11,781 literal elimination cases passed
+G: 28,860 raw DP cases and (11,86) -> 5 passed
+J: 92,450 reachability-game states (n <= 8) passed
+C stress: n=10^12, k=10^6; 100*(10^10,10^5); extremes passed
+G stress: a=5000, sum(a)=10000; T=1000; large b raw BFS passed
+J stress: n=100000, both first players and permutation types passed
+A: official sample and 3,166 graph-deletion DP cases passed
+A stress: n=q=100000, chain/star/balanced/cyclic graphs passed
+B: {'problem': 'B', 'samples': 4, 'brute_cases': 3364, 'stress': True}
+D: {'problem': 'D', 'samples': 8, 'brute_cases': 6313, 'stress': True}
+E: 184 local interactions, ranks and recovered weights passed
+F: {'small_cases': 97, 'maximum_sample': True, 'seconds': 0.8539}
+H: official sample and 257 coverage-oracle cases passed; maximum-size cases passed
+I: {'dp_cases': 45268, 'maximum_cases': 2, 'seconds': 1.7131}
+K: {'problem': 'K', 'keys': 64, 'max_queries': 256, 'total_queries': 16384, 'rejection_checked': True, 'stress': True}
+L: both official samples and 7125 actual attack-search cases passed; maximum-size cases passed
+M: 902 constructions and all adjacent edges passed; maximum-size cases passed
+All checks passed (31.06s).
