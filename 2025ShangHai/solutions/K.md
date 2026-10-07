@@ -17,7 +17,7 @@ $`n,q\le2\cdot10^5`$，操作过程中所有值始终在 $`[0,10^9]`$。区间�
 顺序拼接两段时，左段对右段贡献的影响只由左段最小值 $`u`$ 与最大值 $`v`$ 决定。对节点区间定义
 
 ```math
-C(N,u,v)=\sum_i\min(\operatorname{prefMin}_i,u)\max(\operatorname{prefMax}_i,v).
+C(N,u,v)=\sum_i\min(\mathrm{prefMin}_i,u)\max(\mathrm{prefMax}_i,v).
 ```
 
 如果能够快速算这个函数，就可以合并线段树节点及处理查询。
@@ -26,17 +26,17 @@ C(N,u,v)=\sum_i\min(\operatorname{prefMin}_i,u)\max(\operatorname{prefMax}_i,v).
 
 保存区间最小值 `mn`、最大值 `mx`、第一个元素 `first`，以及
 
-- $`S_{\min}=\sum\operatorname{prefMin}`$；
-- $`S_{\max}=\sum\operatorname{prefMax}`$；
-- $`S_{\times}=\sum\operatorname{prefMin}\cdot\operatorname{prefMax}`$。
+- $`S_{\min}=\sum\mathrm{prefMin}`$；
+- $`S_{\max}=\sum\mathrm{prefMax}`$；
+- $`S_{\times}=\sum\mathrm{prefMin}\cdot\mathrm{prefMax}`$。
 
 另外保存区间长度与赋值、加法懒标记。
 
 先实现单侧函数
 
 ```math
-L(N,u)=\sum\min(\operatorname{prefMin}_i,u),
-\quad R(N,v)=\sum\max(\operatorname{prefMax}_i,v).
+L(N,u)=\sum\min(\mathrm{prefMin}_i,u),
+\quad R(N,v)=\sum\max(\mathrm{prefMax}_i,v).
 ```
 
 前缀最小值单调下降，前缀最大值单调上升，所以每层只递归一侧：以 $`L`$ 为例，若 $`u`$ 不超过左段最小值，左段被压平，递归右段；否则右段的真实前缀已不大于 $`u`$，右段贡献可直接由父节点 $`S_{\min}`$ 减去左节点 $`S_{\min}`$ 得到，只递归左段。每次 $`O(\log n)`$。

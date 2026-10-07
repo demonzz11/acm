@@ -31,7 +31,7 @@ f_u=\min\left(c_u,\min_{v\ne z,\ v,z\text{ 为 }u\text{ 的孩子}}(f_v+f_z)\rig
 用迭代栈做 DFS 前序，记录 $`\mathrm{tin}_u`$；逆序累计子树大小 $`\mathrm{size}_u`$。$`y`$ 是 $`x`$ 的祖先当且仅当
 
 ```math
-\mathrm{tin}_y \le \mathrm{tin}_x < \mathrm{tin}_y + \mathrm{size}_y.
+\mathrm{tin}_y \le \mathrm{tin}_x \lt \mathrm{tin}_y + \mathrm{size}_y.
 ```
 
 因此每个询问 $`O(1)`$，无需 LCA，也不需要递归 DFS。费用可能达到 $`3 \times 10^{14}`$，使用 64 位整数。

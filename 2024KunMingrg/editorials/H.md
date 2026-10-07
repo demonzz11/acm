@@ -22,7 +22,7 @@ a_0\le a_1\le\cdots\le a_{n-1}.
 将序列复制一遍，令 $`a_{i+n}=a_i+2\pi`$。考虑雷达左边界刚刚越过 $`a_i`$ 的情况：此时要覆盖之后的 $`k`$ 个岛屿，右边界需要达到 $`a_{i+k}`$ 附近。因此最坏情况对应
 
 ```math
-\boxed{\alpha=\max_{0\le i<n}(a_{i+k}-a_i)}.
+\boxed{\alpha=\max_{0\le i\lt n}(a_{i+k}-a_i)}.
 ```
 
 下标相隔的是 $`k`$，而不是 $`k-1`$：已经刚刚越过的岛屿不能再算入覆盖数量。
@@ -34,7 +34,7 @@ a_0\le a_1\le\cdots\le a_{n-1}.
 **必要性。** 假设 $`\alpha\lt D`$，取使 $`a_{i+k}-a_i=D`$ 的位置 $`i`$。可以选择足够小的 $`\varepsilon\gt 0`$，使
 
 ```math
-a_i+\varepsilon+\alpha<a_{i+k}.
+a_i+\varepsilon+\alpha\lt a_{i+k}.
 ```
 
 令扫描区间为 $`[a_i+\varepsilon,a_i+\varepsilon+\alpha]`$。不超过 $`a_i`$ 的岛屿均被排除，$`a_{i+k}`$ 及其后的岛屿也未被覆盖，因此至多覆盖中间的 $`k-1`$ 个岛屿。即使有重复极角，覆盖数量也只会更少。因此任何更小角宽都不合法。
@@ -42,7 +42,7 @@ a_i+\varepsilon+\alpha<a_{i+k}.
 **充分性。** 对任意扫描区间 $`[t,t+D]`$，令 $`a_i`$ 是严格小于 $`t`$ 的最后一个极角。于是 $`a_{i+1},\ldots,a_{i+k}`$ 均不小于 $`t`$，且
 
 ```math
-a_{i+k}\le a_i+D<t+D.
+a_{i+k}\le a_i+D\lt t+D.
 ```
 
 它们全部落在扫描区间中，至少覆盖 $`k`$ 个岛屿。重复极角不会改变这个结论。

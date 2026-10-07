@@ -50,9 +50,9 @@ P_i=(1/x_i,1/y_i).
 不用真的算浮点倒数。比较两个倒数点 $`p,q`$ 的函数值时，正分母交叉相乘：
 
 ```math
-\operatorname{sign}\left[\frac b{p_x}+\frac c{p_y}-\frac b{q_x}-\frac c{q_y}\right]
+\mathrm{sign}\left[\frac b{p_x}+\frac c{p_y}-\frac b{q_x}-\frac c{q_y}\right]
 =
-\operatorname{sign}\left[b(q_x-p_x)p_yq_y+c(q_y-p_y)p_xq_x\right].
+\mathrm{sign}\left[b(q_x-p_x)p_yq_y+c(q_y-p_y)p_xq_x\right].
 ```
 
 凸包转向也交叉相乘，代码 `cross` 表示倒数点的真实转向符号。中间量可到 $`10^{36}`$ 量级，必须用 `__int128`，`long long` 不够。所有分母在该部分都严格为正。

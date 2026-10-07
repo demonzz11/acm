@@ -16,4 +16,6 @@
 
 正文的行内公式使用 GitHub 的美元符号加反引号语法，独立公式使用 `math` 围栏。大小比较使用 `\lt`、`\gt`，按位与使用 `\land` 并在题文中注明含义，避免 HTML 实体或 Markdown 转义破坏公式。样例和代码使用带语言标记的代码块。
 
+这些约定也适用于独立公式内部。自定义函数名使用 `\mathrm{...}`；GitHub 当前的浏览器渲染器禁用 `\operatorname`，即使普通 LaTeX 解析器能通过，也会在页面报错。2026 年 10 月 7 日已用 GitHub 实际的浏览器组件逐篇核对三场共 60 份正文，2,375 个公式全部生成 MathML，没有错误提示。
+
 [GitHub 数学公式语法](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)

@@ -41,7 +41,7 @@ w_i=\begin{cases}1,&S_i\ne S_{i+1},\\-1,&S_i=S_{i+1}.\end{cases}
 展开乘积，就是选择一些樱桃做标记，每个标记乘对应 $`w_i`$。标记樱桃不能共享叶子，因此标记集合恰好是路径上的一个匹配。若选了 $`t`$ 对，把每对压缩成一个叶子，剩余 $`n-t`$ 个叶子可任意构造有序满二叉树，有
 
 ```math
-\operatorname{Cat}_{n-t-1}
+\mathrm{Cat}_{n-t-1}
 ```
 
 种。压缩和展开互为逆操作。
@@ -49,7 +49,7 @@ w_i=\begin{cases}1,&S_i\ne S_{i+1},\\-1,&S_i=S_{i+1}.\end{cases}
 令 $`P_t`$ 为所有大小为 $`t`$ 的相邻不重叠配对的权值乘积之和，答案为
 
 ```math
-\boxed{\frac12\sum_t P_t\operatorname{Cat}_{n-t-1}}.
+\boxed{\frac12\sum_t P_t\mathrm{Cat}_{n-t-1}}.
 ```
 
 注意这里不是把相同位的相邻点直接全合并，而是加权选择不重叠的相邻对。
@@ -76,7 +76,7 @@ F_i(z)=F_{i-1}(z)+w_{i-1}zF_{i-2}(z),\qquad F_0=F_1=1.
 相邻位相同的 $`-1`$ 在模意义下存为 $`998244352`$。短多项式直接朴素乘，长多项式共用输入的正变换，减少重复 NTT。最后用阶乘与逆阶乘计算
 
 ```math
-\operatorname{Cat}_j=\frac{(2j)!}{j!(j+1)!}.
+\mathrm{Cat}_j=\frac{(2j)!}{j!(j+1)!}.
 ```
 
 ## 特殊情况与正确性

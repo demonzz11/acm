@@ -53,7 +53,7 @@ M_{i-1}=\min\left(z_{i-1},\min_jf_{i-1,j}\right).
 ```math
 f_{i,j}=
 \min\left(f_{i-1,j},M_{i-1}+c_j\right)
-+b_i\,[j\notin\operatorname{anc}(a_i)].
++b_i\,[j\notin\mathrm{anc}(a_i)].
 ```
 
 当天答案为 $`\min(z_i,\min_jf_{i,j})`$。单独维护 $`z_i`$ 很重要：如果全部部署费用过高，最优方案可能从未安装过滤器。

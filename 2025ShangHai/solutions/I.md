@@ -31,7 +31,7 @@ x\oplus z\le(x\oplus y)+(y\oplus z),
 令 $`f_i`$ 为最后保留到位置 $`i`$ 的最小代价，$`f_0=0`$。转移为
 
 ```math
-f_i=\min_{0\le j<i}\{f_j+(a_j\oplus a_i)+(i-j-1)C\}.
+f_i=\min_{0\le j\lt i}\{f_j+(a_j\oplus a_i)+(i-j-1)C\}.
 ```
 
 虚拟末点也按此式转移，$`f_{n+1}`$ 就是答案。定义
@@ -47,7 +47,7 @@ g_j=f_j-(j+1)C,
 把值写成 $`a=512h+\ell`$，高低部分各有 512 种值。维护
 
 ```math
-B[h][x]=\min_{j:\operatorname{high}(a_j)=h}\{g_j+(\operatorname{low}(a_j)\oplus x)\}.
+B[h][x]=\min_{j:\mathrm{high}(a_j)=h}\{g_j+(\mathrm{low}(a_j)\oplus x)\}.
 ```
 
 插入一个保留点时，枚举全部 512 个低位查询值，更新它所在的行。查询 $`a_i=512h_i+\ell_i`$ 时，枚举 512 个高位：

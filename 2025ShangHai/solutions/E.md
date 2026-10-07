@@ -11,7 +11,7 @@
 第 $`i`$ 个串可选父亲的数量是
 
 ```math
-c_i=\#\{j<i:\operatorname{Ham}(s_i,s_j)\le k\},
+c_i=\#\{j\lt i:\mathrm{Ham}(s_i,s_j)\le k\},
 \qquad \text{answer}=\prod_{i=2}^n c_i.
 ```
 
