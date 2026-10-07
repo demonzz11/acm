@@ -49,8 +49,8 @@ L(N,u)=\sum\min(\operatorname{prefMin}_i,u),
 | --- | --- | --- |
 | $`u\le p,v\ge q`$ | 全被压平，$`tuv`$ | 继续 $`C(\mathrm{right},u,v)`$ |
 | $`u\ge p,v\le q`$ | 继续 $`C(\mathrm{left},u,v)`$ | 原节点的右段贡献，即父 $`S_\times`$ 减左 $`S_\times`$ |
-| $`u<p,v<q`$ | $`u\,R(\mathrm{left},v)`$ | 继续 $`C(\mathrm{right},u,q)`$ |
-| $`u>p,v>q`$（剩余情况） | $`v\,L(\mathrm{left},u)`$ | 继续 $`C(\mathrm{right},p,v)`$ |
+| $`u\lt p,v\lt q`$ | $`u\,R(\mathrm{left},v)`$ | 继续 $`C(\mathrm{right},u,q)`$ |
+| $`u\gt p,v\gt q`$（剩余情况） | $`v\,L(\mathrm{left},u)`$ | 继续 $`C(\mathrm{right},p,v)`$ |
 
 关键是每层只有一条 $`C`$ 递归链，另一个儿子可以直接求值或转成单侧函数。因此一次 $`C`$ 为 $`O(\log^2 n)`$。
 

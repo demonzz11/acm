@@ -22,9 +22,35 @@
 | L | Let's Make a Convex! | [L](statements/L.md) | [L](solutions/L.md) | [L.cpp](L.cpp) | 多边形不等式、排序、双指针 |
 | M | Mystique as Iris | [M](statements/M.md) | [M](solutions/M.md) | [M.cpp](M.cpp) | 不可清空数组的补集计数、线性 DP |
 
+## 难度与补题顺序
+
+官方中文题解首页统计了现场 **417 支有提交队伍（含打星）** 的通过情况。以下按通过情况从高到低排序，作为由易到难的补题参考；通过率也受现场选题和剩余时间影响，不是独立的难度评分。前七题沿用官方百分比，C、K、A 及零通过题沿用官方队伍数。
+
+**建议顺序：`G → L → J → F → I → B → M → C → K → A`，然后按专题选择 `D / E / H`。** D、E、H 现场均为零通过，不根据这张表给它们排严格先后。
+
+| 顺序 | 题目 | 官方现场通过情况 | 补题重点 | 题解 | C++17 |
+| --- | --- | --- | --- | --- | --- |
+| 1 | G · Grand Voting | 99.8% | 排序贪心、相邻交换证明 | [G](solutions/G.md) | [G.cpp](G.cpp) |
+| 2 | L · Let's Make a Convex! | 97.6% | 多边形不等式、排序、双指针 | [L](solutions/L.md) | [L.cpp](L.cpp) |
+| 3 | J · January's Color | 78.2% | 树形 DP、最小与次小值、路径费用前缀 | [J](solutions/J.md) | [J.cpp](J.cpp) |
+| 4 | F · Follow the Penguins | 59.2% | 事件最小堆、失效事件和同时相遇 | [F](solutions/F.md) | [F.cpp](F.cpp) |
+| 5 | I · Imagined Holly | 40.5% | 三点路径异或、祖先关系与父边恢复 | [I](solutions/I.md) | [I.cpp](I.cpp) |
+| 6 | B · Beautiful Dangos | 15.3% | 边界约束、重排充要条件、双指针构造 | [B](solutions/B.md) | [B.cpp](B.cpp) |
+| 7 | M · Mystique as Iris | 12.5% | 结构判定、补集计数、线性 DP | [M](solutions/M.md) | [M.cpp](M.cpp) |
+| 8 | C · Catch the Monster | 17 队 | 毛毛虫森林、动态度数、双指针 | [C](solutions/C.md) | [C.cpp](C.cpp) |
+| 9 | K · Killing Bits | 12 队 | 充分性证明、子集格、压缩最大流 | [K](solutions/K.md) | [K.cpp](K.cpp) |
+| 10 | A · Azalea Garden | 8 队 | 最大攻击力、动态区间覆盖、线段树 | [A](solutions/A.md) | [A.cpp](A.cpp) |
+| 并列 | D · Directed Acyclic Graph | 0 队 | 前后缀可达链、四进制 DAG 构造 | [D](solutions/D.md) | [D.cpp](D.cpp) |
+| 并列 | E · Epilogue of Happiness | 0 队 | 加权树链剖分、分块、分治预处理 | [E](solutions/E.md) | [E.cpp](E.cpp) |
+| 并列 | H · Heart of Darkness | 0 队 | 生成函数、Lagrange 反演、Stirling 数、NTT | [H](solutions/H.md) | [H.cpp](H.cpp) |
+
+补题可分三轮：先独立完成 G、L、J、F、I，再补 B、M，最后进入 C、K、A 和零通过专题题。每题先读题独立尝试，卡住后只看关键结论，关闭题解完成实现；隔天再重写。已掌握的题可以跳过，不能仅用“读过代码”标记完成。
+
+来源：[官方中文题解 PDF 首页](https://ucup.ac/tutorials/tutorials-4-e1-zh.pdf#page=1)；[原始提取文本](sources/editorial-proxy.md)。
+
 ## 阅读与发布
 
-文档使用标准 Markdown 标题、列表、表格和代码块。行内公式采用 GitHub 支持的美元符号加反引号写法，例如 ``$`a_i`$``，避免中文标点及下划线影响公式识别；独立公式仍使用单独成行的 `$$` 标记。
+文档使用标准 Markdown 标题、列表、表格和代码块。行内公式采用 GitHub 支持的美元符号加反引号写法，例如 ``$`a_i`$``；独立公式使用 `math` 围栏代码块，保留花括号转义、矩阵换行和反斜杠。大小比较采用 `\lt`、`\gt`，按位与采用 `\land` 并注明含义，避免 GitHub 渲染时将 `<`、`>`、`&` 转成 HTML 实体。
 
 公式语法参见 [GitHub 官方文档](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)。在 Typora 等本地编辑器中阅读时，请启用内联公式；若编辑器不识别带反引号的写法，可在本地阅读副本中改为 `$...$` 并在公式外保留空格。发布到知乎时，可从编辑器的渲染视图复制正文，再检查公式、图片与代码块；未保留的公式可在知乎公式编辑器中粘贴对应的 LaTeX 源码。
 

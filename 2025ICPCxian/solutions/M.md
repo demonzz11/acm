@@ -39,11 +39,11 @@
 
 转移为
 
-$$
+```math
 \mathrm{nextOne}=\mathrm{large}\cdot\mathrm{waysOne},
 \qquad
 \mathrm{nextLarge}=(\mathrm{one}+\mathrm{large})\cdot\mathrm{waysLarge}.
-$$
+```
 
 首尾位置禁止填 1。初值 $`\mathrm{large} = 1`$，表示空前缀。最后 $`\mathrm{large}`$ 即类型 2 的数量。
 
