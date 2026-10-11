@@ -4,6 +4,7 @@
 
 | 比赛 | 题单 | 难度与补题顺序 | 当前内容 |
 | --- | --- | --- | --- |
+| 2024 ICPC 沈阳区域赛 | [沈阳](2024ShenYangrg/README.md) | [官方分档与现场通过数](2024ShenYangrg/README.md#难度与补题顺序) | A–M 中文题解、C++17、[补题建议](2024ShenYangrg/TRAINING.md) |
 | 2024 ICPC 昆明区域赛 | [昆明](2024KunMingrg/README.md) | [官方分档与现场通过数](2024KunMingrg/README.md#难度与补题顺序) | A–M 中文题解、C++17、难度排行 |
 | 2025 ICPC 西安区域赛 | [西安](2025ICPCxian/README.md) | [按官方现场通过情况排序](2025ICPCxian/README.md#难度与补题顺序) | A–M 中文题面、题解、C++17 |
 | 2025 ICPC 上海区域赛 | [上海](2025ShangHai/README.md) | [官方预期与实际难度](2025ShangHai/README.md#难度与补题顺序) | A–M 中文题解、C++17、[训练建议](2025ShangHai/TRAINING.md) |

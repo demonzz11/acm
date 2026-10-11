@@ -1,0 +1,28 @@
+Compiled A-M with C++17; no warnings.
+Official static samples: all 12 non-interactive problems passed.
+A: 48 independent checks passed (0.10s)
+B: 1225 independent checks passed (0.03s)
+C: 3136 independent checks passed (0.26s)
+D: 1200 independent checks passed (0.07s)
+E: 225 independent checks passed (0.37s)
+F: 30 independent checks passed (0.05s)
+G: 75 independent checks passed (0.07s)
+H: 90 independent checks passed (0.99s)
+I: 504 independent checks passed (0.12s)
+J: 24 independent checks passed (0.18s)
+K: 14 independent checks passed (1.23s)
+L: 5000 independent checks passed (1.29s)
+M: 180 independent checks passed (1.40s)
+STRESS A: 2000 x 2000: 0.664s
+STRESS D: n=500000: 0.199s
+STRESS C: n=1000000,m=1: 0.144s
+STRESS C: 1000 x 1000 mixed: 0.086s
+STRESS F: n=20 all unit costs: 0.098s
+STRESS H: 199999-node star + isolated vertex: 0.101s
+STRESS H: ascending chain + isolated vertex: 0.126s
+STRESS I: ten maximum-depth all-equal trees: 0.010s
+STRESS L: 400000 submissions, large timestamps: 0.271s
+STRESS M: one 500000-residue nonzero cycle: 0.167s
+Original B.cpp: 1225 independent checks passed.
+Original D.cpp: 1200 independent checks passed.
+PASS: 11751 checks; elapsed 18.96s. Local verification only.
