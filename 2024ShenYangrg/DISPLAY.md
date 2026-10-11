@@ -2,6 +2,10 @@
 
 [返回题单](README.md)
 
+**2026 年 10 月 11 日已通过实际 GitHub 页面检查：19 份 Markdown（包括仓库总索引）、444 个公式全部生成 MathML，9 张表格的列数与数据行保持正确，105 个相对文件链接及锚点已核对。数学错误节点为零，公式没有超出正文边界。**
+
+全场题解发布提交为 [`a14fcbd`](https://github.com/demonzz11/acm/commit/a14fcbd4c6b6efa63c9e151aa72e44921a16d720)，逐页浏览器记录固定在该版本；后续显示记录提交不修改十三篇题解与参考代码。
+
 ## 使用的 Markdown 规范
 
 - 所有标题、表格和列表按标准 GitHub Markdown 编写，列表与前后正文之间留空行。
@@ -12,8 +16,10 @@
 
 ## 检查方法
 
-逐篇通过 GitHub 的 Markdown API 渲染，比较源文件与返回 HTML 中的数学内容、表格数量和数据行数，检查本地相对链接及锚点。
+逐篇通过 GitHub 的 Markdown API 渲染，比较源文件与返回 HTML 中的数学内容、表格数量和数据行数，检查相对链接的文件目标及标题锚点。
 
-发布后用真实浏览器打开 GitHub 的各篇文档，等待 GitHub 自带数学组件完成渲染，检查所有公式是否生成 MathML、是否出现错误节点，并检查页面中的表格与标题。检查摘要保存在 [sources/display-report.json](sources/display-report.json)。
+发布后用真实浏览器逐一打开 GitHub 的各篇文档，等待 GitHub 自带数学组件完成渲染，检查所有公式是否生成 MathML、是否出现错误节点，并检查页面中的表格与标题。另对目录页、C 的分段转移和 F 的求和公式保存实际网页截图并视觉核对。检查摘要保存在 [sources/display-report.json](sources/display-report.json)。
+
+本次检查还发现 GitHub API 会改变独立公式中直接位于行末的双反斜杠换行。C、L 的对齐式已改为带可选间距的 LaTeX 换行，重新比较公式内容后完全一致，实际浏览器渲染亦通过。
 
 显示检查与算法验证分别记录；算法检查见 [VALIDATION.md](VALIDATION.md)。
